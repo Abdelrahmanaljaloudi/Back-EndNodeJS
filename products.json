@@ -1,0 +1,22 @@
+{
+    "Toast": {
+        "id": 1,
+        "product": "Toast",
+        "quantity": 10
+    },
+    "Croissant": {
+        "id": 2,
+        "product": "Croissant",
+        "quantity": 5
+    },
+    "Cupcake": {
+        "id": 3,
+        "product": "Cupcake",
+        "quantity": 8
+    },
+    "Pretzel": {
+        "id": 4,
+        "product": "Pretzel",
+        "quantity": 15
+    }
+}

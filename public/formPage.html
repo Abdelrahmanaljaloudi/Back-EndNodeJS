@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order product</title>
+    <link rel="stylesheet" href="formStyle.css">
+</head>
+<body>
+
+    
+    <form method="post" action="<form method="post" action="http://localhost:9000/api/requestProduct">
+       
+       <div><h1>Order Product</h1></div>
+        
+        <div>
+            <input type="text" name="product" placeholder="Product Name" id="productInput" autocomplete="on" oninput="showSuggestions()">
+            <div id="suggestions"></div>
+        </div>
+        <div>
+            <input type="number" name="quantity" placeholder="Quantity" required min="0">
+        </div>
+
+        <div>
+            <input type="submit" value="Place Order">
+        </div>
+    </form>
+    <script>
+    function showSuggestions() {
+        const input = document.getElementById('productInput');
+        const suggestionsContainer = document.getElementById('suggestions');
+
+       
+        const products = ['Toast', 'Croissant', 'Cupcake', 'Prerzel'];
+
+     
+        suggestionsContainer.innerHTML = '';
+
+      
+        const inputValue = input.value.toLowerCase();
+        const filteredProducts = products.filter(product => product.toLowerCase().includes(inputValue));
+
+       
+        filteredProducts.forEach(product => {
+            const suggestionItem = document.createElement('div');
+            suggestionItem.className = 'suggestion-item';
+            suggestionItem.textContent = product;
+            suggestionItem.onclick = () => {
+                input.value = product;
+                suggestionsContainer.innerHTML = '';
+            };
+            suggestionsContainer.appendChild(suggestionItem);
+        });
+    }
+</script>
+</body>
+</html>

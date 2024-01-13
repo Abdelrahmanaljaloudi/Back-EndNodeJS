@@ -29,12 +29,7 @@ app.get('/form', (req, res) => {
 app.get('/products', (req, res) => {
     res.json(products);
 });
-app.post('/placeOrder', (req, res) => {
-    const productName = req.body.product;
-    const quantity = req.body.quantity;
 
-    res.json({ message: `Order placed for ${quantity} ${productName}(s)` });
-});
 
 app.post('/requestProduct', (req, res) => {
     const productName = req.body.product;
@@ -65,5 +60,5 @@ app.post('/addProduct', (req, res) => {
 });
 
 app.listen(9000, () => {
-    console.log(`Server is running on http://localhost:9000`);
+    console.log('Server is running on http://localhost:9000');
 });
